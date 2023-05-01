@@ -82,13 +82,13 @@ else:
 # Function to get existing from Snowflake
 # Reruns the whole Streamlit application if you pass contestant name that 
 # doesn't exists in the database -- rerun() -function
+@st.cache_data
 def get_old_dataset():
     # load messages df
     prediction = contestant.upper() + "_MM_KISAVEIKKAUS"
     df = session.sql(f""" SELECT id, match_day, match, home_team_goals, away_team_goals FROM {prediction} """)
-
+    
     try:
-        @st.cache_data
         df.collect()
     except:
         st.experimental_rerun()
