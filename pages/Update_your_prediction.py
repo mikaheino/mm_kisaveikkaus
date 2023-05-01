@@ -137,7 +137,6 @@ if submit_button:
                 session.write_pandas(edited, prediction, auto_create_table=True, overwrite=True)
                 header('Predictions have been updated')  
                 time(5)
-                st.session_state.page = 0
 
             except:
                 st.warning("Error updating table")
