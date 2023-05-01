@@ -88,10 +88,7 @@ def get_old_dataset():
     prediction = contestant.upper() + "_MM_KISAVEIKKAUS"
     df = session.sql(f""" SELECT id, match_day, match, home_team_goals, away_team_goals FROM {prediction} """)
     
-    try:
-        df.collect()
-    except:
-        st.experimental_rerun()
+    df.collect()
 
     return df
 
