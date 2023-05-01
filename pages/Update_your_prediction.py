@@ -82,6 +82,7 @@ else:
 # Function to get existing from Snowflake
 # Reruns the whole Streamlit application if you pass contestant name that 
 # doesn't exists in the database -- rerun() -function
+@st.cache_data
 def get_old_dataset():
     # load messages df
     prediction = contestant.upper() + "_MM_KISAVEIKKAUS"
@@ -137,6 +138,7 @@ if submit_button:
                 session.write_pandas(edited, prediction, auto_create_table=True, overwrite=True)
                 header('Predictions have been updated')  
                 time(5)
+                st.cache_data.clear()
 
             except:
                 st.warning("Error updating table")
