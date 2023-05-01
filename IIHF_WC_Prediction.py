@@ -138,7 +138,7 @@ if submit_button:
                     # Write to database
                     session.write_pandas(edited, prediction, auto_create_table=True, overwrite=True)
                     header('Predictions have been added')  
-
+                    st.experimental_rerun()  
             except:
                 st.warning("Error updating table")
                 #display success message for 5 seconds and update the table to reflect what is in Snowflake
