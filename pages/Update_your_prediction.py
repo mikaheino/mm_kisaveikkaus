@@ -136,6 +136,7 @@ if submit_button:
                 # Write to database
                 session.write_pandas(edited, prediction, auto_create_table=True, overwrite=True)
                 header('Predictions have been updated')  
+                st.experimental_rerun()  
 
             except:
                 st.warning("Error updating table")
