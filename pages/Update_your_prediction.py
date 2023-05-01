@@ -86,10 +86,8 @@ else:
 def get_old_dataset():
     # load messages df
     prediction = contestant.upper() + "_MM_KISAVEIKKAUS"
-    df = session.sql(f""" SELECT id, match_day, match, home_team_goals, away_team_goals FROM {prediction} """)
+    df = session.sql(f""" SELECT id, match_day, match, home_team_goals, away_team_goals FROM {prediction} """).toPandas()
     
-    df.collect()
-
     return df
 
 # Here we actually start building the Streamlit application
