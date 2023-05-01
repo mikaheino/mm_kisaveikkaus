@@ -114,7 +114,6 @@ with col3:
 contestant = remove(contestant)
 
 # Let's get previous prediction from Snowflake
-@st.cache_data
 dataset=get_old_dataset()
 
 with st.form("data_editor_form"):
