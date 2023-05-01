@@ -1,2 +1,2 @@
--r https://repo.anaconda.com/pkgs/snowflake snowflake-snowpark-python
+snowflake-snowpark-python
 pandas
