@@ -73,19 +73,16 @@ date_time = now.strftime("%Y_%d_%m_%H%M%S")
 
 
 # This defines Snowflake connection settings, set in Streamlit config.toml file
-#if 'snowflake_connection' not in st.session_state:
-#    st.session_state.snowflake_connection = Session.builder.configs(st.secrets.snowflake).create()
-#    session = st.session_state.snowflake_connection
-#else:
-#    session = st.session_state.snowflake_connection
-
-# Replace the same with st.experimental_connection
-session = st.experimental_connection('snowpark')
+if 'snowflake_connection' not in st.session_state:
+    st.session_state.snowflake_connection = Session.builder.configs(st.secrets.snowflake).create()
+    session = st.session_state.snowflake_connection
+else:
+    session = st.session_state.snowflake_connection
 
 # Function to get blank dataset from Snowflake
 def get_blank_dataset():
     # load messages df
-    df = session.query("SELECT * FROM MM_KISAVEIKKAUS_SCHEDULE")
+    df = session.table("MM_KISAVEIKKAUS_SCHEDULE")
 
     return df
 
