@@ -81,11 +81,11 @@ date_time = now.strftime("%Y_%d_%m_%H%M%S")
 
 # Replace the same with st.experimental_connection
 session = st.experimental_connection('snowpark')
-     
+
 # Function to get blank dataset from Snowflake
 def get_blank_dataset():
     # load messages df
-    df = session.table("MM_KISAVEIKKAUS_SCHEDULE")
+    df = session.query("SELECT * FROM MM_KISAVEIKKAUS_SCHEDULE")
 
     return df
 
