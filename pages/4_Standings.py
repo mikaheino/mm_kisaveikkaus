@@ -117,8 +117,8 @@ with col3:
 # Let's get previous prediction from Snowflake
 dataset=get_current_status()
 
-st.experimental_data_editor(dataset, height=500, use_container_width=True, num_rows="fixed", disabled=True)
+st.experimental_data_editor(dataset, height=550, use_container_width=True, num_rows="fixed", disabled=True)
 
 dataset_overall=get_overall_status()
 
-st.experimental_data_editor(dataset_overall, width=1500, height=2000, use_container_width=False, num_rows="fixed", disabled=True)
+st.experimental_data_editor(dataset_overall, use_container_width=True, num_rows="fixed", disabled=True)
