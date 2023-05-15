@@ -121,4 +121,4 @@ st.experimental_data_editor(dataset, height=530, use_container_width=True, num_r
 
 dataset_overall=get_overall_status()
 
-st.experimental_data_editor(dataset_overall, width=1000, height=1000, use_container_width=False, num_rows="fixed", disabled=True)
+st.experimental_data_editor(dataset_overall, use_container_width=False, num_rows="fixed", disabled=True)
